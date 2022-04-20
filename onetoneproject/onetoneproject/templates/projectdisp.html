@@ -19,7 +19,7 @@
 <body>
     <div class="container">
         <div class="row justify-content-center col-lg-12 col-md-8 col-sm-12">
-         <div class="d-flex flex-row flex-nowrap overflow-auto bg-warning">
+         <div class="d-flex flex-row flex-nowrap overflow-auto bg-warning mt-5">
              {%for row in key%}
              <div class="card bg-info col-lg-3 col-md-8 col-sm-12 me-3 shadow rounded-3">
              <h2>{{row.name}}</h2>
@@ -30,8 +30,10 @@
             </div>
             </div>
             </div>
-        <a href="/home/irctc/1" class="col-4 btn btn-warning" >irctc</a>
-            <button class="col-4 btn btn-danger" type="submit">passportseva</button>
+            <div class="row justify-content-around mt-4 mb-4">
+        <a href="/home/irctc/1" class="col-3 btn btn-warning" >irctc</a>
+            <button class="col-3 btn btn-danger" type="submit">passportseva</button>
+        </div>
             </body>
             </html>
 
