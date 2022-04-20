@@ -48,6 +48,26 @@ def display(request):
 
     return render (request,"disp.html",{"key":res,"key1":wai,"key2":n2})
 
+def reading(request):
+    obj=models.Place.objects.get(restaurant__place__name__startswith="JOJO")
+    print(obj)
+    h=[]
+    h.append(obj)
+
+    print(type(obj))
+
+    return render(request,"list.html",{"key":h})
+
+def listingall(request):
+    obj=models.Place.objects.all()
+    obj1=models.Restaurant.objects.all()
+    obj2=models.Waiter.objects.all()
+    print(obj,obj1,obj2)
+
+    print(type(obj))
+
+    return render(request,"list.html",{"key":obj,"key1":obj1,"key2":obj2})    
+
 
 def projectdisplay(request):
     p=models.Person.objects.all()
@@ -65,32 +85,14 @@ def projectall(request):
       p=models.Project.objects.all() 
       return render(request,"irctc.html",{"key":p})
 
-
-
-
-
-
-
-
-
-
-
-
-
-def listing(request):
-    obj=models.Place.objects.get(restaurant__place__name__startswith="JOJO")
+def projectreading(request):
+    obj=models.Project.objects.get(name__startswith="ir")
+    t=obj.id
+    print(t)
     print(obj)
-
+    h=[]
+    h.append(obj)
     print(type(obj))
-
-    return render(request,"list.html",{"key":obj})
-
-def listingall(request):
-    obj=models.Place.objects.all()
-    obj1=models.Restaurant.objects.all()
-    obj2=models.Waiter.objects.all()
-    print(obj,obj1,obj2)
-
-    print(type(obj))
-
-    return render(request,"list.html",{"key":obj,"key1":obj1,"key2":obj2})    
+    obj2=models.Person.objects.filter(project_id=t)
+    print(obj2)
+    return render(request,"projectlist.html",{"key":h,"key1":obj2})

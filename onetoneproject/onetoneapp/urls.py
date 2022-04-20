@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from .import views
 
-urlpatterns = [
+urlpatterns = [path('list',views.reading),
                path('place',views.placenew),
                path('rest',views.restnew),
                path('wait',views.waitnew),
@@ -11,4 +11,5 @@ urlpatterns = [
                path('prodisp',views.projectdisplay),
                path('irctc/<int:pk>',views.irctc),
                path('irctcname',views.irctcname),
-               path('proall',views.projectall)]
+               path('proall',views.projectall),
+               path('proread',views.projectreading)]
