@@ -58,9 +58,12 @@ def irctc(request,pk):
       return render(request,"irctc.html",{"key":p})
 
 def irctcname(request):
-      p=models.Person.objects.filter(project_name="irctc") 
+      p=models.Person.objects.get(project_name="irctc") 
       return render(request,"irctc.html",{"key":p})
 
+def projectall(request):
+      p=models.Project.objects.all() 
+      return render(request,"irctc.html",{"key":p})
 
 
 
