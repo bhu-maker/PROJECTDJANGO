@@ -9,4 +9,5 @@ urlpatterns = [path('list',views.listing),
                path('listall',views.listingall),
                path('disp',views.display),
                path('prodisp',views.projectdisplay),
-               path('irctc/<int:pk>',views.irctc)]
+               path('irctc/<int:pk>',views.irctc),
+               path('irctcname',views.irctcname)]
